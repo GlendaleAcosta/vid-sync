@@ -84,7 +84,7 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
     "install": "npm run build",
-    "postinstall": "npm run db:create && npm run db:migrate"
+    "postinstall": "npm run db:migrate"
   },
   "eslintConfig": {
     "extends": "react-app"
