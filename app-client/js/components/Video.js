@@ -25,9 +25,6 @@ class Video extends Component {
     const youtube = player.target;
     this.setState({ youtube: youtube});
 
-    console.log('isPlaying', youtubeReducer.initData.isPlaying);
-    console.log('playerState', youtube.getPlayerState());
-
     if (!youtubeReducer.initData.isPlaying) {
       youtube.seekTo(youtubeReducer.initData.time);
       youtube.pauseVideo();
