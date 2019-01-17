@@ -30,7 +30,9 @@ async function createRoom(username) {
       timestamp: Date.now()
     }
     const uuid = uuidv4();
+    const id = uuidv4();
     const data = {
+      id: id,
       host: username,
       title: defaultData.currVideo.snippet.title,
       thumbnail: defaultData.currVideo.snippet.thumbnails.medium.url,
