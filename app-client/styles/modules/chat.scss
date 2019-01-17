@@ -1,0 +1,14 @@
+.chat-container {
+  height: 100%;
+  background: #edf0f3;
+  padding-top: 0.5rem;
+}
+
+.chat-messages-container {
+  flex: 4 !important;
+  overflow: auto;
+}
+
+.chat-form {
+  flex: 1 !important;
+}

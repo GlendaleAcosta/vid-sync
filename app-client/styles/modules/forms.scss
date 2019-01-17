@@ -1,0 +1,19 @@
+.label-container {
+  transform: translate(1.5rem, -50%);
+  position: absolute;
+  background-color: white;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  color: #86868c;
+}
+
+.label {
+  font-size: 14px;
+}
+
+.forgot-password {
+  position: absolute;
+  right: 0;
+  margin: 0 !important;
+  margin-top: 0.2rem !important
+}
