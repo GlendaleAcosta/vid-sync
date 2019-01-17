@@ -25,7 +25,7 @@ async function createRoom(username) {
           title: `[JazzzzMaybe]Re:0 ED2 "Stay Alive" -Remix-`
         },
       },
-      isPlaying: false,
+      isPlaying: true,
       time: 0,
       timestamp: Date.now()
     }
