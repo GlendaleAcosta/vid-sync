@@ -18,6 +18,19 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
 // Middleware
+app.use(session({
+  secret: 'ssshhhhh',
+  store: new redisStore({
+    user: 'h',
+    host: 'ec2-50-19-130-127.compute-1.amazonaws.com',
+    port: 22399,
+    password: "p18a75db86cebb95fd8020da5887b343635dd55278c655e651cc76025a318dd78",
+    client: client,
+    ttl :  260
+  }),
+  saveUninitialized: false,
+  resave: false
+}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '../build')));
