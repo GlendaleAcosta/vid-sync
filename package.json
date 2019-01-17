@@ -75,7 +75,7 @@
     "workbox-webpack-plugin": "3.6.3"
   },
   "scripts": {
-    "start": "node app-server/server.js",
+    "start": "npm run db:create && npm run db:migrate && node app-server/server.js",
     "dev:client": "node scripts/start.js",
     "dev:server": "nodemon --watch app-server app-server/server.js",
     "redis": "redis-server &",
