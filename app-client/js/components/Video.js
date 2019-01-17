@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import YouTube from 'react-youtube';
 import PlayerControls from 'components/PlayerControls';
+import VideoOverlay from 'components/VideoOverlay';
 import {selectVideo} from 'actions/youtubeActions';
 
 class Video extends Component {
@@ -24,6 +25,8 @@ class Video extends Component {
     const youtube = player.target;
     this.setState({ youtube: youtube});
 
+    console.log('isPlaying', youtubeReducer.initData.isPlaying);
+    console.log('playerState', youtube.getPlayerState());
 
     if (!youtubeReducer.initData.isPlaying) {
       youtube.seekTo(youtubeReducer.initData.time);
@@ -62,6 +65,7 @@ class Video extends Component {
 
   render() {
     const {socket, youtubeReducer} = this.props;
+    const { youtube } = this.state;
     const opts = {
       height: '100%',
       width: '100%',
@@ -78,19 +82,20 @@ class Video extends Component {
       <div>
         <div className="video-player">
           {
-          youtubeReducer.currVideo ? <YouTube
-            className=""
-            videoId={youtubeReducer.currVideo.id.videoId}
-            opts={opts}
-            onReady={this.onReady}
-            onPlay={this.onPlay}
-            onPause={this.onPause}
-            onStateChange={this.onStateChange}
-          />
-          : null
-        }
-
+            youtubeReducer.currVideo ? <YouTube
+              className=""
+              videoId={youtubeReducer.currVideo.id.videoId}
+              opts={opts}
+              onReady={this.onReady}
+              onPlay={this.onPlay}
+              onPause={this.onPause}
+              onStateChange={this.onStateChange}
+            />
+            : null
+          }
+          { (youtube !== undefined && youtube !== null) ? <VideoOverlay {...this.props} {...this.state} /> : null}
         </div>
+
         {this.state.youtube ? <PlayerControls socket={socket} {...this.state} /> : null }
       </div>
     );

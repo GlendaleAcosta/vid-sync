@@ -6,14 +6,12 @@ class PlayIcon extends Component {
     const {youtube, socket} = this.props;
     socket.emit('client-play', youtube.getCurrentTime());
     youtube.playVideo();
-
   }
 
   pauseVideo = () => {
     const {youtube, socket} = this.props;
     socket.emit('client-pause', youtube.getCurrentTime());
     youtube.pauseVideo();
-
   }
   render() {
     const {youtube} = this.props;

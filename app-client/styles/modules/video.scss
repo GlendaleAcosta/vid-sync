@@ -64,3 +64,12 @@
 
   transform: translate(-50%, -50%);
 }
+
+.invisible-youtube-box {
+  width: 100%;
+  position: absolute;
+  z-index: 30;
+  height: 100%;
+  top: 0;
+  cursor: pointer;
+}

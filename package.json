@@ -81,6 +81,7 @@
     "redis": "redis-server &",
     "db:create": "cd app-server && ../node_modules/.bin/sequelize db:create",
     "db:migrate": "cd app-server && ../node_modules/.bin/sequelize db:migrate",
+    "db:migrate:undo": "cd app-server && ../node_modules/.bin/sequelize db:migrate:undo",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
     "install": "npm run build",
