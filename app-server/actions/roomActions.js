@@ -1,7 +1,7 @@
 var models = require('../models');
 var link = "https://www.youtube.com/watch?v=aMUvOC1VEHw";
 var redis   = require("redis");
-var client  = redis.createClient();
+var client = redis.createClient(process.env.REDIS_URL);
 const uuidv4 = require('uuid/v4');
 
 async function createRoom(username) {
